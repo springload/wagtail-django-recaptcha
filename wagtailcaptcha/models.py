@@ -18,14 +18,10 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
         self.form_builder = WagtailCaptchaFormBuilder
 
     def process_form_submission(self, form):
-        super(AbstractEmailForm, self).process_form_submission(form)
+        if WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME in form.fields.keys():
+            form.fields.pop(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME)
 
-        if self.to_address:
-            content = ''
-            for x in form.fields.items():
-                if not isinstance(x[1], ReCaptchaField):  # exclude ReCaptchaField from notification
-                    content += '\n' + x[1].label + ': ' + text_type(form.data.get(x[0]))
-            send_mail(self.subject, content, [self.to_address], self.from_address,)
+        return super(WagtailCaptchaEmailForm, self).process_form_submission(form)
 
     class Meta:
         abstract = True
