@@ -1,8 +1,3 @@
-from six import text_type
-
-from captcha.fields import ReCaptchaField
-
-from wagtail.wagtailadmin.utils import send_mail
 from wagtail.wagtailforms.models import AbstractEmailForm, AbstractForm
 
 from .forms import WagtailCaptchaFormBuilder
@@ -20,7 +15,6 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
     def process_form_submission(self, form):
         if WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME in form.fields.keys():
             form.fields.pop(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME)
-
         return super(WagtailCaptchaEmailForm, self).process_form_submission(form)
 
     class Meta:
