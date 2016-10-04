@@ -1,3 +1,6 @@
+.. image:: https://img.shields.io/pypi/v/wagtail-django-recaptcha.svg
+   :target: https://pypi.python.org/pypi/wagtail-django-recaptcha
+
 Wagtail ReCaptcha
 ================
 **Wagtail forms with a ReCaptcha form field/widget integration app.**
