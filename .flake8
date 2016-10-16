@@ -1,0 +1,7 @@
+[flake8]
+exclude =
+    .git,
+    .githooks,
+    __pycache__,
+    docs,
+max-line-length = 119
