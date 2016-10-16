@@ -6,7 +6,7 @@
    :target: https://codeclimate.com/github/springload/wagtail-django-recaptcha
 
 Wagtail ReCaptcha
-================
+=================
 
     Wagtail forms with a ReCaptcha form field/widget integration app.
 
