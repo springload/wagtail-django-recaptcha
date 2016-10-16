@@ -86,7 +86,7 @@ Installation
     cd wagtail-django-recaptcha/
     virtualenv .venv
     source ./.venv/bin/activate
-    pip install flake8 isort
+    make init
 
 Commands
 ~~~~~~~~
