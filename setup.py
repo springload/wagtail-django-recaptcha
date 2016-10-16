@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='wagtail-django-recaptcha',
-    version='0.2',
+    version='0.1',
     packages=find_packages(),
     install_requires=['django-recaptcha'],
     include_package_data=True,
