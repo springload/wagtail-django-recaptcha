@@ -101,11 +101,11 @@ Commands
 Releases
 ~~~~~~~~
 
-*  Update the `changelog`_.
+*  Update the `CHANGELOG`_.
 *  Update the version number in ``setup.py``.
 *  ``git release x.y``
 *  ``make publish`` (confirm, and enter your password)
 *  Go to https://pypi.python.org/pypi/wagtail-django-recaptcha and check that all is well
 
 .. _Semantic Versioning: http://semver.org/spec/v2.0.0.html
-.. _changelog: https://github.com/springload/wagtail-django-recaptcha/CHANGELOG.rst
+.. _changelog: https://github.com/springload/wagtail-django-recaptcha/blob/master/CHANGELOG.rst
