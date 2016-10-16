@@ -4,7 +4,7 @@ from .forms import WagtailCaptchaFormBuilder
 
 
 class WagtailCaptchaEmailForm(AbstractEmailForm):
-    """A WagtailCaptchaEmailForm Page. Pages implementing a captcha form with email notification should inhert from it"""
+    """Pages implementing a captcha form with email notification should inhert from this"""
 
     is_abstract = True  # Don't display me in "Add"
 
@@ -22,7 +22,7 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
 
 
 class WagtailCaptchaForm(AbstractForm):
-    """A WagtailCaptchaForm Page. Pages implementing a captcha form should inhert from it"""
+    """Pages implementing a captcha form should inhert from this"""
 
     is_abstract = True  # Don't display me in "Add"
 
