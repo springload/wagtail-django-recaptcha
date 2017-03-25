@@ -8,10 +8,9 @@
 Wagtail ReCaptcha
 =================
 
-    Wagtail forms with a ReCaptcha form field/widget integration app.
+    Wagtail forms with a ReCaptcha form field/widget integration app. Wagtail ReCaptcha provides an easy way to integrate the `django-recaptcha <https://github.com/praekelt/django-recaptcha>`_ field when using the Wagtail formbuilder.
 
-wagtail-django-captcha provides an easy way to integrate the `django-recaptcha <https://github.com/praekelt/django-recaptcha>`_ field when using the Wagtail formbuilder.
-
+Check out `Awesome Wagtail <https://github.com/springload/awesome-wagtail>`_ for more awesome packages and resources from the Wagtail community.
 
 Installation
 ------------
