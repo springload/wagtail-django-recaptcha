@@ -71,6 +71,8 @@ Example
 
 The captcha field can't be added from the admin UI but will appear in your frontend as the last of the form fields.
 
+    For a more thorough example, <Made with Wagtail http://madewithwagtail.org/>_ (springload/madewithwagtail <https://github.com/springload/madewithwagtail>_) is an example of an open-source site using this module.
+
 Development
 -----------
 
