@@ -15,7 +15,7 @@ Check out `Awesome Wagtail <https://github.com/springload/awesome-wagtail>`_ for
 Installation
 ------------
 
-#. Install or add ``wagtailcaptcha`` to your Python path.
+#. Install wagtailcaptcha via pip ``pip install wagtail-django-recaptcha`` or add ``wagtailcaptcha`` to your Python path.
 
 #. Add ``wagtailcaptcha`` to your ``INSTALLED_APPS`` setting.
 
