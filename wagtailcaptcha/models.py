@@ -1,4 +1,8 @@
-from wagtail.wagtailforms.models import AbstractEmailForm, AbstractForm
+import wagtail
+if wagtail.VERSION >= (2, 0):
+    from wagtail.contrib.forms.models import AbstractEmailForm, AbstractForm
+else:
+    from wagtail.wagtailforms.models import AbstractEmailForm, AbstractForm
 
 from .forms import WagtailCaptchaFormBuilder
 

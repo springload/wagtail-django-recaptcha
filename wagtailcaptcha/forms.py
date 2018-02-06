@@ -1,18 +1,14 @@
-from wagtail.wagtailforms.forms import FormBuilder
+import wagtail
+if wagtail.VERSION >= (2, 0):
+    from wagtail.contrib.forms.forms import FormBuilder
+else:
+    from wagtail.wagtailforms.forms import FormBuilder
 
 from captcha.fields import ReCaptchaField
 
 
 class WagtailCaptchaFormBuilder(FormBuilder):
     CAPTCHA_FIELD_NAME = 'wagtailcaptcha'
-
-    def __init__(self, fields):
-        super(WagtailCaptchaFormBuilder, self).__init__(fields)
-        # Add wagtailcaptcha to FIELD_TYPES declaration
-        self.FIELD_TYPES.update({self.CAPTCHA_FIELD_NAME: self.create_wagtailcaptcha_field})
-
-    def create_wagtailcaptcha_field(self, field, options):
-        return ReCaptchaField(**options)
 
     @property
     def formfields(self):
