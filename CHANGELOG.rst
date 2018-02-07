@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+#. Add Wagtail 2.0 compatibility
+
 0.2 (2016-10-16)
 ------------------
 #. Fix/add ability to send emails to multiple addresses. (issue #1)
