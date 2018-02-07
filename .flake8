@@ -4,4 +4,6 @@ exclude =
     .githooks,
     __pycache__,
     docs,
+ignore =
+    E402,  # Remove once Wagtail 2.0 support has been dropped
 max-line-length = 119
