@@ -15,7 +15,7 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
         self.form_builder = WagtailCaptchaFormBuilder
 
     def process_form_submission(self, form):
-        if WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME in form.fields.keys():
+        if WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME in form.fields:
             form.fields.pop(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME)
         return super(WagtailCaptchaEmailForm, self).process_form_submission(form)
 
