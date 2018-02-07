@@ -10,8 +10,6 @@ from .forms import WagtailCaptchaFormBuilder
 class WagtailCaptchaEmailForm(AbstractEmailForm):
     """Pages implementing a captcha form with email notification should inhert from this"""
 
-    is_abstract = True  # Don't display me in "Add"
-
     def __init__(self, *args, **kwargs):
         super(WagtailCaptchaEmailForm, self).__init__(*args, **kwargs)
         self.form_builder = WagtailCaptchaFormBuilder
@@ -27,8 +25,6 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
 
 class WagtailCaptchaForm(AbstractForm):
     """Pages implementing a captcha form should inhert from this"""
-
-    is_abstract = True  # Don't display me in "Add"
 
     def __init__(self, *args, **kwargs):
         super(WagtailCaptchaForm, self).__init__(*args, **kwargs)
