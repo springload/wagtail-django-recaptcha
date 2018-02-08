@@ -12,6 +12,9 @@ testing_extras = [
     # For coverage and PEP8 linting
     'flake8>=2.2.0',
     'isort>=4.2.5',
+
+    # For test site
+    'wagtail==1.12',
 ]
 
 # Documentation dependencies

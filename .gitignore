@@ -1,5 +1,14 @@
 *.pyc
+*.pyo
 *.egg-info
 build/
 dist/
 .venv
+.DS_Store
+*.log
+*.pot
+*.sqlite3
+tests/testapp/var/media/
+.coverage
+coverage
+coverage_html_report/
