@@ -2,9 +2,9 @@ from __future__ import absolute_import, unicode_literals
 
 from captcha.fields import ReCaptchaField
 from django.test import TestCase
-from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
 
 from home.models import TestCaptchaEmailFormField
+from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
 
 
 class WagtailCaptchaFormBuilderTestCase(TestCase):
@@ -40,7 +40,8 @@ class WagtailCaptchaFormBuilderTestCase(TestCase):
         generated_field_names = list(generated_fields.keys())  # Cast the `KeysView` to list for Python 3.
 
         # Note: `user_defined_field_names` and `generated_field_names` should already be in the same order
-        # since the former is a queryset (it has a specific order) and the latter an OrderedDict build from that same queryset.
+        # since the former is a queryset (it has a specific order)
+        # and the latter an OrderedDict build from that same queryset.
         self.assertEqual(
             user_defined_field_names,
             generated_field_names,
