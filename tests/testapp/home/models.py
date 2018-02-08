@@ -1,6 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import wagtail
+from django.db import models
 from modelcluster.fields import ParentalKey
 
 from wagtailcaptcha.models import WagtailCaptchaEmailForm, WagtailCaptchaForm
@@ -14,7 +15,7 @@ else:
 
 
 class TestCaptchaEmailFormField(AbstractFormField):
-    page = ParentalKey('TestCaptchaEmailFormPage', related_name='form_fields')
+    page = ParentalKey('TestCaptchaEmailFormPage', related_name='form_fields', on_delete=models.CASCADE)
 
 
 class TestCaptchaEmailFormPage(WagtailCaptchaEmailForm):
@@ -31,7 +32,7 @@ class TestCaptchaEmailFormPage(WagtailCaptchaEmailForm):
 
 
 class TestCaptchaFormField(AbstractFormField):
-    page = ParentalKey('TestCaptchaFormPage', related_name='form_fields')
+    page = ParentalKey('TestCaptchaFormPage', related_name='form_fields', on_delete=models.CASCADE)
 
 
 class TestCaptchaFormPage(WagtailCaptchaForm):
