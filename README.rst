@@ -102,11 +102,13 @@ Commands
 Releases
 ~~~~~~~~
 
+*  Make a new branch for the release of the new version.
 *  Update the `CHANGELOG`_.
-*  Update the version number in ``setup.py``.
-*  ``git release x.y``
-*  ``make publish`` (confirm, and enter your password)
-*  Go to https://pypi.python.org/pypi/wagtail-django-recaptcha and check that all is well
+*  Update the version number in ``wagtailcaptcha/__init__.py``, following semver.
+*  Make a PR and squash merge it.
+*  Back on ``master`` with the PR merged, use ``make publish`` (confirm, and enter your password).
+*  Finally, go to GitHub and create a release and a tag for the new version.
+*  Done!
 
 .. _Semantic Versioning: http://semver.org/spec/v2.0.0.html
 .. _changelog: https://github.com/springload/wagtail-django-recaptcha/blob/master/CHANGELOG.rst

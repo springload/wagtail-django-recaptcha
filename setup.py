@@ -1,6 +1,8 @@
 import os
 from setuptools import setup, find_packages
 
+from wagtailcaptcha import __version__
+
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
 
@@ -28,7 +30,7 @@ documentation_extras = [
 
 setup(
     name='wagtail-django-recaptcha',
-    version='0.2',
+    version=__version__,
     packages=find_packages(),
     include_package_data=True,
     license='MIT',
