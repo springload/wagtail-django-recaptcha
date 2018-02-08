@@ -8,7 +8,8 @@ init: clean-pyc ## Install dependencies and initialise for development.
 	pip install -e .[testing,docs] -U
 
 lint: ## Lint the project.
-	flake8 wagtailcaptcha setup.py
+	flake8 wagtailcaptcha tests setup.py
+	isort --check-only --diff --recursive wagtailcaptcha tests setup.py
 
 test: ## Test the project.
 	python ./runtests.py
