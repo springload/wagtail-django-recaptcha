@@ -1,9 +1,9 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.test import TestCase
-from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
 
 from home.models import TestCaptchaEmailFormPage, TestCaptchaFormPage
+from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
 
 
 class TestCaptchaEmailFormPageTestCase(TestCase):
