@@ -139,6 +139,6 @@ WAGTAIL_ADDRESS_MAP_CENTER = 'Wellington, New Zealand'
 WAGTAIL_ADDRESS_MAP_ZOOM = 8
 
 try:
-    from .local import *
+    from .local import *  # noqa: F401, F403
 except ImportError:
     pass

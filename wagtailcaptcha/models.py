@@ -1,10 +1,12 @@
+from __future__ import absolute_import, unicode_literals
+
 import wagtail
+from .forms import WagtailCaptchaFormBuilder
+
 if wagtail.VERSION >= (2, 0):
     from wagtail.contrib.forms.models import AbstractEmailForm, AbstractForm
 else:
     from wagtail.wagtailforms.models import AbstractEmailForm, AbstractForm
-
-from .forms import WagtailCaptchaFormBuilder
 
 
 class WagtailCaptchaEmailForm(AbstractEmailForm):
