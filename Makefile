@@ -8,10 +8,16 @@ init: clean-pyc ## Install dependencies and initialise for development.
 	pip install -e .[testing,docs] -U
 
 lint: ## Lint the project.
-	flake8 --config=.flake8 wagtailcaptcha setup.py
+	flake8 wagtailcaptcha setup.py
 
 test: ## Test the project.
 	python ./runtests.py
+
+test-coverage: ## Run the tests while generating test coverage data.
+	coverage run ./runtests.py && coverage report && coverage html
+
+test-ci: ## Continuous integration test suite.
+	tox
 
 clean-pyc: ## Remove Python file artifacts.
 	find . -name '*.pyc' -exec rm -f {} +
@@ -19,4 +25,4 @@ clean-pyc: ## Remove Python file artifacts.
 	find . -name '*~' -exec rm -f {} +
 
 publish: ## Publishes a new version to pypi.
-	rm dist/* && python setup.py sdist && twine upload dist/*
+	rm dist/* && python setup.py sdist && twine upload dist/* && echo 'Success! Go to https://pypi.python.org/pypi/wagtail-django-recaptcha and check that all is well.'
