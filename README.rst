@@ -92,12 +92,7 @@ Installation
 Commands
 ~~~~~~~~
 
-.. code:: sh
-
-    make help            # See what commands are available.
-    make lint            # Lint the project.
-    make clean-pyc       # Remove Python file artifacts.
-    make publish         # Publishes a new version to pypi.
+Use `make help` to get a list of commands.
 
 Releases
 ~~~~~~~~

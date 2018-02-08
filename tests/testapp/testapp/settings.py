@@ -3,6 +3,8 @@ from __future__ import absolute_import, unicode_literals
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import wagtail
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -12,21 +14,38 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
 # Application definition
+if wagtail.VERSION >= (2, 0):
+    wagtail_apps = [
+        'wagtail.contrib.forms',
+        'wagtail.sites',
+        'wagtail.users',
+        'wagtail.admin',
+        'wagtail.core',
+        'wagtail.documents',
+        'wagtail.images',
+    ]
+    wagtail_middlewares = [
+        'wagtail.core.middleware.SiteMiddleware',
+    ]
+else:
+    wagtail_apps = [
+        'wagtail.wagtailforms',
+        'wagtail.wagtailsites',
+        'wagtail.wagtailusers',
+        'wagtail.wagtaildocs',
+        'wagtail.wagtailimages',
+        'wagtail.wagtailadmin',
+        'wagtail.wagtailcore',
+    ]
+    wagtail_middlewares = [
+        'wagtail.wagtailcore.middleware.SiteMiddleware',
+    ]
 
-INSTALLED_APPS = [
+INSTALLED_APPS = wagtail_apps + [
+    'home',
+
+    'captcha',
     'wagtailcaptcha',
-
-    'wagtail.wagtailforms',
-    'wagtail.wagtailredirects',
-    'wagtail.wagtailembeds',
-    'wagtail.wagtailsites',
-    'wagtail.wagtailusers',
-    'wagtail.wagtailsnippets',
-    'wagtail.wagtaildocs',
-    'wagtail.wagtailimages',
-    'wagtail.wagtailsearch',
-    'wagtail.wagtailadmin',
-    'wagtail.wagtailcore',
 
     'modelcluster',
     'taggit',
@@ -48,10 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-
-    'wagtail.wagtailcore.middleware.SiteMiddleware',
-    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
-]
+] + wagtail_middlewares
 
 ROOT_URLCONF = 'testapp.urls'
 
@@ -119,7 +135,7 @@ MEDIA_URL = '/media/'
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "testapp"
+WAGTAIL_SITE_NAME = 'testapp'
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
@@ -132,11 +148,6 @@ DEBUG = True
 SECRET_KEY = '4*5e^@2%(h#$*b4=ze_kcdw46-$0z#rrf3661c5(&+x^oj=4)+'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Wagtailgmaps
-WAGTAIL_ADDRESS_MAP_KEY = 'DummyKey'
-WAGTAIL_ADDRESS_MAP_CENTER = 'Wellington, New Zealand'
-WAGTAIL_ADDRESS_MAP_ZOOM = 8
 
 try:
     from .local import *  # noqa: F401, F403
