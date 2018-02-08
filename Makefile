@@ -10,6 +10,9 @@ init: clean-pyc ## Install dependencies and initialise for development.
 lint: ## Lint the project.
 	flake8 --config=.flake8 wagtailcaptcha setup.py
 
+test: ## Test the project.
+	python ./runtests.py
+
 clean-pyc: ## Remove Python file artifacts.
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
