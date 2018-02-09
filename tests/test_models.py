@@ -1,12 +1,16 @@
 from __future__ import absolute_import, unicode_literals
 
 import json
-from test.test_support import EnvironmentVarGuard
 
 from django.test import TestCase
 
 from home.models import TestCaptchaEmailFormPage, TestCaptchaFormPage
 from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
+
+try:
+    from test.test_support import EnvironmentVarGuard  # Python 2
+except ImportError:
+    from test.support import EnvironmentVarGuard  # Python 3
 
 
 class CaptchaTestingModeMixin(TestCase):
