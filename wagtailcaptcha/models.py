@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import wagtail
-from .forms import WagtailCaptchaFormBuilder
+from .forms import WagtailCaptchaFormBuilder, remove_captcha_field
 
 if wagtail.VERSION >= (2, 0):
     from wagtail.contrib.forms.models import AbstractEmailForm, AbstractForm
@@ -17,8 +17,7 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
         self.form_builder = WagtailCaptchaFormBuilder
 
     def process_form_submission(self, form):
-        if WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME in form.fields:
-            form.fields.pop(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME)
+        remove_captcha_field(form)
         return super(WagtailCaptchaEmailForm, self).process_form_submission(form)
 
     class Meta:
@@ -31,6 +30,10 @@ class WagtailCaptchaForm(AbstractForm):
     def __init__(self, *args, **kwargs):
         super(WagtailCaptchaForm, self).__init__(*args, **kwargs)
         self.form_builder = WagtailCaptchaFormBuilder
+
+    def process_form_submission(self, form):
+        remove_captcha_field(form)
+        return super(WagtailCaptchaForm, self).process_form_submission(form)
 
     class Meta:
         abstract = True
