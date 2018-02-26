@@ -56,7 +56,7 @@ class TestCaptchaEmailFormPageTestCase(CaptchaTestingModeMixin, TestCase):
         self.assertNotIn(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME, submission_data)
 
 
-class TestCaptchaFormPageTestCase(TestCase):
+class TestCaptchaFormPageTestCase(CaptchaTestingModeMixin, TestCase):
     fixtures = ['test_data.json']
 
     def test_default_form_builder_is_set(self):
