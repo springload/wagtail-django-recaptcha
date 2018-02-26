@@ -5,6 +5,7 @@ Unreleased
 ------------------
 #. Add Wagtail 2.0 compatibility.
 #. Ensure captcha field is properly removed from submission data. (issue #11)
+#. Allow subclassing of the form builder. (issue #7)
 
 0.2 (2016-10-16)
 ------------------

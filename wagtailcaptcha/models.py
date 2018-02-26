@@ -12,9 +12,7 @@ else:
 class WagtailCaptchaEmailForm(AbstractEmailForm):
     """Pages implementing a captcha form with email notification should inhert from this"""
 
-    def __init__(self, *args, **kwargs):
-        super(WagtailCaptchaEmailForm, self).__init__(*args, **kwargs)
-        self.form_builder = WagtailCaptchaFormBuilder
+    form_builder = WagtailCaptchaFormBuilder
 
     def process_form_submission(self, form):
         remove_captcha_field(form)
@@ -27,9 +25,7 @@ class WagtailCaptchaEmailForm(AbstractEmailForm):
 class WagtailCaptchaForm(AbstractForm):
     """Pages implementing a captcha form should inhert from this"""
 
-    def __init__(self, *args, **kwargs):
-        super(WagtailCaptchaForm, self).__init__(*args, **kwargs)
-        self.form_builder = WagtailCaptchaFormBuilder
+    form_builder = WagtailCaptchaFormBuilder
 
     def process_form_submission(self, form):
         remove_captcha_field(form)

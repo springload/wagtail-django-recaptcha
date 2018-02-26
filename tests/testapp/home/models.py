@@ -5,6 +5,7 @@ from django.db import models
 from modelcluster.fields import ParentalKey
 
 from wagtailcaptcha.models import WagtailCaptchaEmailForm, WagtailCaptchaForm
+from .forms import CustomCaptchaFormBuilder
 
 if wagtail.VERSION >= (2, 0):
     from wagtail.admin.edit_handlers import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
@@ -39,3 +40,25 @@ class TestCaptchaFormPage(WagtailCaptchaForm):
     content_panels = WagtailCaptchaForm.content_panels + [
         InlinePanel('form_fields', label="Form fields"),
     ]
+
+
+class TestCustomFormBuilderCaptchaEmailFormField(AbstractFormField):
+    page = ParentalKey(
+        'TestCustomFormBuilderCaptchaEmailFormPage',
+        related_name='form_fields',
+        on_delete=models.CASCADE,
+    )
+
+
+class TestCustomFormBuilderCaptchaEmailFormPage(WagtailCaptchaEmailForm):
+    form_builder = CustomCaptchaFormBuilder
+    is_creatable = False  # Don't show in the admin
+
+
+class TestCustomFormBuilderCaptchaFormField(AbstractFormField):
+    page = ParentalKey('TestCustomFormBuilderCaptchaFormPage', related_name='form_fields', on_delete=models.CASCADE)
+
+
+class TestCustomFormBuilderCaptchaFormPage(WagtailCaptchaForm):
+    form_builder = CustomCaptchaFormBuilder
+    is_creatable = False  # Don't show in the admin

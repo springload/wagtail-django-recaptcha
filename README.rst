@@ -71,7 +71,23 @@ Example
 
 The captcha field can't be added from the admin UI but will appear in your frontend as the last of the form fields.
 
-    For a more thorough example, `Made with Wagtail <http://madewithwagtail.org/>`_ (`github.com/springload/madewithwagtail <https://github.com/springload/madewithwagtail>`_) is an example of an open-source site using this module.
+If you need to customise the behaviour of the form builder, make sure to inherit from ``wagtailcaptcha.forms.WagtailCaptchaFormBuilder`` instead of Wagtail's default form builder, then declare it as usual on the page model.
+
+.. code-block:: python
+
+    from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
+    from wagtailcaptcha.models import WagtailCaptchaForm
+
+
+    class CustomFormBuilder(WagtailCaptchaFormBuilder):
+        # Some custom behaviour...
+
+
+    class FormPage(WagtailCaptchaForm):
+        form_builder = CustomFormBuilder
+        # The rest of the page definition as usual...
+
+For a more thorough example, `Made with Wagtail <http://madewithwagtail.org/>`_ (`github.com/springload/madewithwagtail <https://github.com/springload/madewithwagtail>`_) is an example of an open-source site using this module.
 
 Development
 -----------

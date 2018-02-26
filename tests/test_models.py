@@ -4,7 +4,13 @@ import json
 
 from django.test import TestCase
 
-from home.models import TestCaptchaEmailFormPage, TestCaptchaFormPage
+from home.forms import CustomCaptchaFormBuilder
+from home.models import (
+    TestCaptchaEmailFormPage,
+    TestCaptchaFormPage,
+    TestCustomFormBuilderCaptchaEmailFormPage,
+    TestCustomFormBuilderCaptchaFormPage,
+)
 from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
 
 try:
@@ -26,10 +32,15 @@ class CaptchaTestingModeMixin(TestCase):
 class TestCaptchaEmailFormPageTestCase(CaptchaTestingModeMixin, TestCase):
     fixtures = ['test_data.json']
 
-    def test_captcha_form_builder_is_set(self):
+    def test_default_form_builder_is_set(self):
         page = TestCaptchaEmailFormPage()
 
         self.assertIs(page.form_builder, WagtailCaptchaFormBuilder)
+
+    def test_form_builder_can_be_replaced(self):
+        page = TestCustomFormBuilderCaptchaEmailFormPage()
+
+        self.assertIs(page.form_builder, CustomCaptchaFormBuilder)
 
     def test_captcha_field_is_removed_from_submission_data(self):
         page = TestCaptchaEmailFormPage.objects.get(slug='email-form')
@@ -48,10 +59,15 @@ class TestCaptchaEmailFormPageTestCase(CaptchaTestingModeMixin, TestCase):
 class TestCaptchaFormPageTestCase(CaptchaTestingModeMixin, TestCase):
     fixtures = ['test_data.json']
 
-    def test_captcha_form_builder_is_set(self):
+    def test_default_form_builder_is_set(self):
         page = TestCaptchaFormPage()
 
         self.assertIs(page.form_builder, WagtailCaptchaFormBuilder)
+
+    def test_form_builder_can_be_replaced(self):
+        page = TestCustomFormBuilderCaptchaFormPage()
+
+        self.assertIs(page.form_builder, CustomCaptchaFormBuilder)
 
     def test_captcha_field_is_removed_from_submission_data(self):
         page = TestCaptchaFormPage.objects.get(slug='form')
