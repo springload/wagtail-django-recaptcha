@@ -3,7 +3,8 @@ Changelog
 
 Unreleased
 ------------------
-#. Add Wagtail 2.0 compatibility
+#. Add Wagtail 2.0 compatibility.
+#. Ensure captcha field is properly removed from submission data. (issue #11)
 
 0.2 (2016-10-16)
 ------------------

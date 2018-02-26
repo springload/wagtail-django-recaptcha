@@ -19,3 +19,8 @@ class WagtailCaptchaFormBuilder(FormBuilder):
         fields[self.CAPTCHA_FIELD_NAME] = ReCaptchaField(label='')
 
         return fields
+
+
+def remove_captcha_field(form):
+    form.fields.pop(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME, None)
+    form.cleaned_data.pop(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME, None)

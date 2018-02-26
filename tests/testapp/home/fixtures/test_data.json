@@ -129,14 +129,14 @@
         "numchild": 0,
         "title": "Form",
         "draft_title": "Form",
-        "slug": "contact",
+        "slug": "form",
         "content_type": [
             "home",
             "testcaptchaformpage"
         ],
         "live": true,
         "has_unpublished_changes": false,
-        "url_path": "/home/contact/",
+        "url_path": "/home/form/",
         "owner": [
             "admin"
         ],
