@@ -25,6 +25,7 @@ matrix:
      python: 3.6
 install:
 - pip install tox coveralls
+- gem install coveralls-lcov
 script:
 - make test-ci
 after_success:
