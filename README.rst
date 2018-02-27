@@ -4,6 +4,8 @@
    :target: https://pypi.python.org/pypi/wagtail-django-recaptcha
 .. image:: https://codeclimate.com/github/springload/wagtail-django-recaptcha/badges/gpa.svg
    :target: https://codeclimate.com/github/springload/wagtail-django-recaptcha
+.. image:: https://coveralls.io/repos/github/springload/wagtail-django-recaptcha/badge.svg?branch=master
+   :target: https://coveralls.io/github/springload/wagtail-django-recaptcha?branch=master
 
 Wagtail ReCaptcha
 =================
