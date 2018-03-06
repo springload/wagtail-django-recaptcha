@@ -23,7 +23,7 @@ testing_extras = [
     'isort==4.2.5',
 
     # For test site
-    'wagtail==1.12',
+    'wagtail==2.0',
 ]
 
 # Documentation dependencies
