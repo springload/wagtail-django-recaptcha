@@ -36,10 +36,15 @@ Example
 
 .. code-block:: python
 
-    from wagtail.wagtailforms.models import AbstractFormField
-    from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
-    from wagtail.wagtailcore.fields import RichTextField
-
+    from wagtail.contrib.forms.models import AbstractFormField
+    from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
+    from wagtail.core.fields import RichTextField
+    
+    # Or, if using Wagtail < 2.0
+    #from wagtail.wagtailforms.models import AbstractFormField
+    #from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
+    #from wagtail.wagtailcore.fields import RichTextField
+    
     from modelcluster.fields import ParentalKey
 
     from wagtailcaptcha.models import WagtailCaptchaForm
