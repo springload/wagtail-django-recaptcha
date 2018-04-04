@@ -47,27 +47,26 @@ Example
     
     from modelcluster.fields import ParentalKey
 
-    from wagtailcaptcha.models import WagtailCaptchaForm
+    from wagtailcaptcha.models import WagtailCaptchaEmailForm
 
 
     class SubmitFormField(AbstractFormField):
         page = ParentalKey('SubmitFormPage', related_name='form_fields')
 
 
-    class SubmitFormPage(WagtailCaptchaForm):
+    class SubmitFormPage(WagtailCaptchaEmailForm):
         body = RichTextField(blank=True, help_text='Edit the content you want to see before the form.')
         thank_you_text = RichTextField(blank=True, help_text='Set the message users will see after submitting the form.')
 
         class Meta:
             verbose_name = "Form submission page"
-            description = "Page with the form to submit"
 
 
     SubmitFormPage.content_panels = [
         FieldPanel('title', classname="full title"),
         FieldPanel('body', classname="full"),
         FieldPanel('thank_you_text', classname="full"),
-        InlinePanel(SubmitFormPage, 'form_fields', label="Form fields"),
+        InlinePanel('form_fields', label="Form fields"),
         MultiFieldPanel([
             FieldPanel('to_address'),
             FieldPanel('from_address'),
