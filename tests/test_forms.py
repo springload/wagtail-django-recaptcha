@@ -2,8 +2,8 @@ from __future__ import absolute_import, unicode_literals
 
 from captcha.fields import ReCaptchaField
 from django.test import TestCase
-
 from home.models import TestCaptchaEmailFormField
+
 from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
 
 
@@ -31,7 +31,7 @@ class WagtailCaptchaFormBuilderTestCase(TestCase):
 
     def test_user_defined_fields_are_present(self):
         user_defined_fields = TestCaptchaEmailFormField.objects.all()
-        user_defined_field_names = [f.clean_name for f in user_defined_fields]
+        user_defined_field_names = [f.get_field_clean_name() for f in user_defined_fields]
 
         form = WagtailCaptchaFormBuilder(user_defined_fields)
         generated_fields = form.formfields
