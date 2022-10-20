@@ -14,32 +14,18 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
 # Application definition
-if wagtail.VERSION >= (2, 0):
-    wagtail_apps = [
-        'wagtail.contrib.forms',
-        'wagtail.sites',
-        'wagtail.users',
-        'wagtail.admin',
-        'wagtail.core',
-        'wagtail.documents',
-        'wagtail.images',
-    ]
-    wagtail_middlewares = [
-        'wagtail.core.middleware.SiteMiddleware',
-    ]
-else:
-    wagtail_apps = [
-        'wagtail.wagtailforms',
-        'wagtail.wagtailsites',
-        'wagtail.wagtailusers',
-        'wagtail.wagtaildocs',
-        'wagtail.wagtailimages',
-        'wagtail.wagtailadmin',
-        'wagtail.wagtailcore',
-    ]
-    wagtail_middlewares = [
-        'wagtail.wagtailcore.middleware.SiteMiddleware',
-    ]
+# Application definition
+wagtail_apps = [
+    'wagtail.contrib.forms',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.admin',
+    'wagtail' if wagtail.VERSION >= (3, 0) else "wagtail.core",
+    'wagtail.documents',
+    'wagtail.images',
+]
+
+wagtail_middlewares = []
 
 INSTALLED_APPS = wagtail_apps + [
     'home',
@@ -63,7 +49,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -148,6 +133,8 @@ DEBUG = True
 SECRET_KEY = '4*5e^@2%(h#$*b4=ze_kcdw46-$0z#rrf3661c5(&+x^oj=4)+'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 try:
     from .local import *  # noqa: F401, F403

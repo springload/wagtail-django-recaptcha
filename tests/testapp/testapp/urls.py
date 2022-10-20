@@ -2,7 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 import wagtail
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, re_path as url
 
 if wagtail.VERSION >= (2, 0):
     from wagtail.admin import urls as wagtailadmin_urls
