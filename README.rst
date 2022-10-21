@@ -37,7 +37,7 @@ Example
 .. code-block:: python
 
     from wagtail.contrib.forms.models import AbstractFormField
-    from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
+    from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
     from wagtail.core.fields import RichTextField
     
     # Or, if using Wagtail < 2.0

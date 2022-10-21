@@ -4,6 +4,7 @@
     "pk": 1,
     "fields": {
         "sort_order": 0,
+        "clean_name": "name",
         "label": "Name",
         "field_type": "singleline",
         "required": true,
@@ -18,6 +19,7 @@
     "pk": 1,
     "fields": {
         "sort_order": 0,
+        "clean_name": "name",
         "label": "Name",
         "field_type": "singleline",
         "required": true,

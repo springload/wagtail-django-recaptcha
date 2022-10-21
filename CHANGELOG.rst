@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ------------------
 ...
+2.0 (2022-10-21)
+------------------
+#. Added Wagtail 3.0 compatibility.
+#. Added Wagtail 4.0 compatibility.
+#. Removed Wagtail 2.0 compatibility.
 
 1.0 (2018-03-07)
 ------------------

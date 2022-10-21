@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 
-import json
+from test.support import EnvironmentVarGuard  # Python 3
 
 from django.test import TestCase
 from home.forms import CustomCaptchaFormBuilder
@@ -12,11 +12,6 @@ from home.models import (
 )
 
 from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
-
-try:
-    from test.test_support import EnvironmentVarGuard  # Python 2
-except ImportError:
-    from test.support import EnvironmentVarGuard  # Python 3
 
 
 class CaptchaTestingModeMixin(TestCase):
@@ -51,7 +46,7 @@ class TestCaptchaEmailFormPageTestCase(CaptchaTestingModeMixin, TestCase):
             self.assertTrue(form.is_valid())
 
         form_submission = page.process_form_submission(form)
-        submission_data = json.loads(form_submission.form_data)
+        submission_data = form_submission.form_data
 
         self.assertNotIn(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME, submission_data)
 
@@ -78,6 +73,6 @@ class TestCaptchaFormPageTestCase(CaptchaTestingModeMixin, TestCase):
             self.assertTrue(form.is_valid())
 
         form_submission = page.process_form_submission(form)
-        submission_data = json.loads(form_submission.form_data)
+        submission_data = form_submission.form_data
 
         self.assertNotIn(WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME, submission_data)
