@@ -38,8 +38,11 @@ Example
 
     from wagtail.contrib.forms.models import AbstractFormField
     from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
-    from wagtail.core.fields import RichTextField
-
+    from wagtail.fields import RichTextField
+    
+    # Or, if using Wagtail < 3.0
+    #from wagtail.core.fields import RichTextField
+    
     from modelcluster.fields import ParentalKey
 
     from wagtailcaptcha.models import WagtailCaptchaEmailForm
