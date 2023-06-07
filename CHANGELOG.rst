@@ -4,6 +4,13 @@ Changelog
 Unreleased
 ------------------
 ...
+3.0 (2023-06-07)
+------------------
+#. Added Wagtail 5.0 compatibility.
+#. Added Django 4.2 compatibility tests.
+#. Removed support for Django version 4.0
+
+...
 2.1 (2023-06-07)
 ------------------
 #. Added Wagtail 4.2 compatibility.
