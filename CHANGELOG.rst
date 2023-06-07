@@ -4,6 +4,13 @@ Changelog
 Unreleased
 ------------------
 ...
+2.1 (2023-06-07)
+------------------
+#. Added Wagtail 4.2 compatibility.
+#. Added Python 3.11 compatibility tests.
+#. Removed compatibility for versions of Wagtail below 4.1
+
+...
 2.0 (2022-10-21)
 ------------------
 #. Added Wagtail 3.0 compatibility.
