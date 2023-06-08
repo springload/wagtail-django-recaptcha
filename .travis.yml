@@ -7,10 +7,13 @@ cache:
 matrix:
   # See `Which version combinations to include in Travis test matrix?` in `/docs/README.md`.
   include:
+<<<<<<< HEAD
    - env: TOXENV=py37-dj32-wt41
      python: 3.7
    - env: TOXENV=py37-dj32-wt42
      python: 3.7
+=======
+>>>>>>> 3962157 (Removed Python 3.7 support, Updated docs)
    - env: TOXENV=py38-dj32-wt41
      python: 3.8
    - env: TOXENV=py38-dj32-wt42

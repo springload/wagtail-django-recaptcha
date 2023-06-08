@@ -9,6 +9,7 @@ Unreleased
 #. Added Wagtail 5.0 compatibility.
 #. Added Django 4.2 compatibility tests.
 #. Removed support for Django version 4.0
+#. Removed compatibility for Python 3.7
 
 ...
 2.1 (2023-06-07)
