@@ -12,7 +12,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
 # Application definition
-# Application definition
 wagtail_apps = [
     'wagtail.contrib.forms',
     'wagtail.sites',

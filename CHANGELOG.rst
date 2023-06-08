@@ -9,6 +9,7 @@ Unreleased
 #. Added Wagtail 4.2 compatibility.
 #. Added Python 3.11 compatibility tests.
 #. Removed compatibility for versions of Wagtail below 4.1
+#. Removed compatibility for Python 3.6
 
 ...
 2.0 (2022-10-21)
