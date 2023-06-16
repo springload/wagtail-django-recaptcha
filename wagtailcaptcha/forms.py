@@ -5,13 +5,13 @@ from wagtail.contrib.forms.forms import FormBuilder
 
 
 class WagtailCaptchaFormBuilder(FormBuilder):
-    CAPTCHA_FIELD_NAME = 'wagtailcaptcha'
+    CAPTCHA_FIELD_NAME = "wagtailcaptcha"
 
     @property
     def formfields(self):
         # Add wagtailcaptcha to formfields property
         fields = super(WagtailCaptchaFormBuilder, self).formfields
-        fields[self.CAPTCHA_FIELD_NAME] = ReCaptchaField(label='')
+        fields[self.CAPTCHA_FIELD_NAME] = ReCaptchaField(label="")
 
         return fields
 

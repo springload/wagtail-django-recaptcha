@@ -14,12 +14,10 @@ from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.images import urls as wagtailimages_urls
 
 urlpatterns = [
-    re_path(r'^admin/', include(wagtailadmin_urls)),
-
-    re_path(r'^documents/', include(wagtaildocs_urls)),
-    re_path(r'^images/', include(wagtailimages_urls)),
-
-    re_path(r'', include(wagtail_urls)),
+    re_path(r"^admin/", include(wagtailadmin_urls)),
+    re_path(r"^documents/", include(wagtaildocs_urls)),
+    re_path(r"^images/", include(wagtailimages_urls)),
+    re_path(r"", include(wagtail_urls)),
 ]
 
 
