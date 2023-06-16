@@ -132,6 +132,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Silence some errors
 SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 try:
     from .local import *  # noqa: F401, F403
