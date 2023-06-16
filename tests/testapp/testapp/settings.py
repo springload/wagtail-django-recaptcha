@@ -139,7 +139,7 @@ WAGTAIL_SITE_NAME = 'testapp'
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = WAGTAILADMIN_BASE_URL = 'http://example.com'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -148,6 +148,9 @@ DEBUG = True
 SECRET_KEY = '4*5e^@2%(h#$*b4=ze_kcdw46-$0z#rrf3661c5(&+x^oj=4)+'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Silence some errors
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 try:
     from .local import *  # noqa: F401, F403
