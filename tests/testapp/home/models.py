@@ -3,16 +3,12 @@ from __future__ import absolute_import, unicode_literals
 import wagtail
 from django.db import models
 from modelcluster.fields import ParentalKey
+from wagtail.admin.panels import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
+from wagtail.contrib.forms.models import AbstractFormField
 
 from wagtailcaptcha.models import WagtailCaptchaEmailForm, WagtailCaptchaForm
-from .forms import CustomCaptchaFormBuilder
 
-if wagtail.VERSION >= (2, 0):
-    from wagtail.admin.edit_handlers import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
-    from wagtail.contrib.forms.models import AbstractFormField
-else:
-    from wagtail.wagtailadmin.edit_handlers import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
-    from wagtail.wagtailforms.models import AbstractFormField
+from .forms import CustomCaptchaFormBuilder
 
 
 class TestCaptchaEmailFormField(AbstractFormField):
