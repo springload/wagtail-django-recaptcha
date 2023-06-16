@@ -1,6 +1,5 @@
 from __future__ import absolute_import, unicode_literals
 
-import wagtail
 from django.db import models
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, FieldRowPanel, InlinePanel, MultiFieldPanel
