@@ -1,6 +1,5 @@
 from __future__ import absolute_import, unicode_literals
 
-import wagtail
 from django.conf import settings
 from django.urls import include, re_path
 from wagtail import urls as wagtail_urls

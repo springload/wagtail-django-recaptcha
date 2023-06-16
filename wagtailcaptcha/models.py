@@ -1,6 +1,5 @@
 from __future__ import absolute_import, unicode_literals
 
-import wagtail
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractForm
 
 from .forms import WagtailCaptchaFormBuilder, remove_captcha_field
