@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 
 from wagtailcaptcha import __version__
 
-with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+with open(os.path.join(os.path.dirname(__file__), "README.rst")) as readme:
     README = readme.read()
 
 # allow setup.py to be run from any path
@@ -15,59 +15,55 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 # Testing dependencies
 testing_extras = [
     # Required for running the tests
-    'tox>=3.26.0,<3.27',
-
+    "tox>=3.26.0,<3.27",
     # For coverage and PEP8 linting
-    'coverage>=6.5.0,<6.6',
-    'flake8>=5.0.4,<5.1',
-    'isort>=5.10.1',
-
+    "coverage>=6.5.0,<6.6",
+    "flake8>=5.0.4,<5.1",
+    "isort>=5.10.1",
     # For test site
-    'wagtail>=2.15,<4.2',
+    "wagtail>=2.15,<4.2",
 ]
 
 # Documentation dependencies
-documentation_extras = [
-
-]
+documentation_extras = []
 
 setup(
-    name='wagtail-django-recaptcha',
+    name="wagtail-django-recaptcha",
     version=__version__,
     packages=find_packages(),
     include_package_data=True,
-    license='MIT',
-    description='A simple recaptcha field for Wagtail Form Pages.',
+    license="MIT",
+    description="A simple recaptcha field for Wagtail Form Pages.",
     long_description=README,
-    url='http://github.com/springload/wagtail-django-recaptcha',
-    author='Springload',
-    author_email='hello@springload.co.nz',
+    url="http://github.com/springload/wagtail-django-recaptcha",
+    author="Springload",
+    author_email="hello@springload.co.nz",
     classifiers=[
-        'Environment :: Web Environment',
-        'Framework :: Django',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Framework :: Django',
-        'Framework :: Django :: 3.2',
-        'Framework :: Django :: 4.0',
-        'Framework :: Django :: 4.1',
-        'Framework :: Wagtail',
-        'Framework :: Wagtail :: 3',
-        'Framework :: Wagtail :: 4',
-        'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        "Environment :: Web Environment",
+        "Framework :: Django",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Framework :: Django",
+        "Framework :: Django :: 3.2",
+        "Framework :: Django :: 4.0",
+        "Framework :: Django :: 4.1",
+        "Framework :: Wagtail",
+        "Framework :: Wagtail :: 3",
+        "Framework :: Wagtail :: 4",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
-    install_requires=['django-recaptcha'],
+    install_requires=["django-recaptcha"],
     extras_require={
-        'testing': testing_extras,
-        'docs': documentation_extras,
+        "testing": testing_extras,
+        "docs": documentation_extras,
     },
-    zip_safe=False
+    zip_safe=False,
 )

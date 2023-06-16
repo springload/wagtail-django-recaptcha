@@ -15,13 +15,13 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 # Application definition
 wagtail_apps = [
-    'wagtail.contrib.forms',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.admin',
-    'wagtail' if wagtail.VERSION >= (3, 0) else "wagtail.core",
-    'wagtail.documents',
-    'wagtail.images',
+    "wagtail.contrib.forms",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.admin",
+    "wagtail" if wagtail.VERSION >= (3, 0) else "wagtail.core",
+    "wagtail.documents",
+    "wagtail.images",
 ]
 wagtail_middlewares = []
 
