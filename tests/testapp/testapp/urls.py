@@ -2,7 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 import wagtail
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, re_path
 
 if wagtail.VERSION >= (2, 0):
     from wagtail.admin import urls as wagtailadmin_urls
@@ -16,12 +16,12 @@ else:
     from wagtail.wagtailimages import urls as wagtailimages_urls
 
 urlpatterns = [
-    url(r'^admin/', include(wagtailadmin_urls)),
+    re_path(r'^admin/', include(wagtailadmin_urls)),
 
-    url(r'^documents/', include(wagtaildocs_urls)),
-    url(r'^images/', include(wagtailimages_urls)),
+    re_path(r'^documents/', include(wagtaildocs_urls)),
+    re_path(r'^images/', include(wagtailimages_urls)),
 
-    url(r'', include(wagtail_urls)),
+    re_path(r'', include(wagtail_urls)),
 ]
 
 
