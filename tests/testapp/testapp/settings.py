@@ -20,25 +20,25 @@ if wagtail.VERSION >= (2, 0):
         'wagtail.sites',
         'wagtail.users',
         'wagtail.admin',
-        'wagtail.core',
+        'wagtail',
         'wagtail.documents',
         'wagtail.images',
     ]
     wagtail_middlewares = [
-        'wagtail.core.middleware.SiteMiddleware',
+        'wagtail.middleware.SiteMiddleware',
     ]
 else:
     wagtail_apps = [
-        'wagtail.wagtailforms',
-        'wagtail.wagtailsites',
-        'wagtail.wagtailusers',
-        'wagtail.wagtaildocs',
-        'wagtail.wagtailimages',
-        'wagtail.wagtailadmin',
-        'wagtail.wagtailcore',
+        'wagtail.contrib.forms',
+        'wagtail.sites',
+        'wagtail.users',
+        'wagtail.documents',
+        'wagtail.images',
+        'wagtail.admin',
+        'wagtail',
     ]
     wagtail_middlewares = [
-        'wagtail.wagtailcore.middleware.SiteMiddleware',
+        'wagtail.middleware.SiteMiddleware',
     ]
 
 INSTALLED_APPS = wagtail_apps + [
