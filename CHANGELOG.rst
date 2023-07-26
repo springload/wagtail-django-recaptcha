@@ -3,10 +3,12 @@ Changelog
 
 Unreleased
 ------------------
-#. Added Wagtail 3.0 compatibility.
-#. Added Wagtail 4.0 compatibility.
-#. Removed compatibility for versions of Wagtail below 2.15
-#. Removed support for versions of Django below 3.2
+#. Added Wagtail 5.0 compatibility.
+#. Added Django 4.2 compatibility.
+#. Added Python 3.11 compatibility.
+#. Removed compatibility for versions of Wagtail below 4.1
+#. Removed support for Django 4.0
+#. Removed compatibility for Python 3.7
 
 1.0 (2018-03-07)
 ------------------

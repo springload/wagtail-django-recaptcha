@@ -7,82 +7,46 @@ cache:
 matrix:
   # See `Which version combinations to include in Travis test matrix?` in `/docs/README.md`.
   include:
-   - env: TOXENV=py37-dj32-wt215
-     python: 3.7
-   - env: TOXENV=py37-dj32-wt216
-     python: 3.7
-   - env: TOXENV=py37-dj32-wt3
-     python: 3.7
-   - env: TOXENV=py37-dj32-wt4
-     python: 3.7
-   - env: TOXENV=py37-dj32-wt41
-     python: 3.7
-   - env: TOXENV=py38-dj32-wt215
-     python: 3.8
-   - env: TOXENV=py38-dj32-wt216
-     python: 3.8
-   - env: TOXENV=py38-dj32-wt3
-     python: 3.8
-   - env: TOXENV=py38-dj32-wt4
-     python: 3.8
    - env: TOXENV=py38-dj32-wt41
      python: 3.8
-   - env: TOXENV=py38-dj40-wt216
+   - env: TOXENV=py38-dj32-wt42
      python: 3.8
-   - env: TOXENV=py38-dj40-wt3
-     python: 3.8
-   - env: TOXENV=py38-dj40-wt4
-     python: 3.8
-   - env: TOXENV=py38-dj40-wt41
-     python: 3.8
-   - env: TOXENV=py38-dj41-wt4
+   - env: TOXENV=py38-dj32-wt50
      python: 3.8
    - env: TOXENV=py38-dj41-wt41
      python: 3.8
-   - env: TOXENV=py39-dj32-wt215
-     python: 3.9
-   - env: TOXENV=py39-dj32-wt216
-     python: 3.9
-   - env: TOXENV=py39-dj32-wt3
-     python: 3.9
-   - env: TOXENV=py39-dj32-wt4
-     python: 3.9
+   - env: TOXENV=py38-dj41-wt42
+     python: 3.8
+   - env: TOXENV=py38-dj41-wt50
+     python: 3.8
    - env: TOXENV=py39-dj32-wt41
      python: 3.9
-   - env: TOXENV=py39-dj40-wt216
+   - env: TOXENV=py39-dj32-wt42
      python: 3.9
-   - env: TOXENV=py39-dj40-wt3
-     python: 3.9
-   - env: TOXENV=py39-dj40-wt4
-     python: 3.9
-   - env: TOXENV=py39-dj40-wt41
-     python: 3.9
-   - env: TOXENV=py39-dj41-wt4
+   - env: TOXENV=py39-dj32-wt50
      python: 3.9
    - env: TOXENV=py39-dj41-wt41
      python: 3.9
-   - env: TOXENV=py310-dj32-wt215
-     python: 3.10
-   - env: TOXENV=py310-dj32-wt216
-     python: 3.10
-   - env: TOXENV=py310-dj32-wt3
-     python: 3.10
-   - env: TOXENV=py310-dj32-wt4
-     python: 3.10
+   - env: TOXENV=py39-dj41-wt42
+     python: 3.9
+   - env: TOXENV=py39-dj41-wt50
+     python: 3.9
    - env: TOXENV=py310-dj32-wt41
      python: 3.10
-   - env: TOXENV=py310-dj40-wt216
+   - env: TOXENV=py310-dj32-wt42
      python: 3.10
-   - env: TOXENV=py310-dj40-wt3
-     python: 3.10
-   - env: TOXENV=py310-dj40-wt4
-     python: 3.10
-   - env: TOXENV=py310-dj40-wt41
-     python: 3.10
-   - env: TOXENV=py310-dj41-wt4
+   - env: TOXENV=py310-dj32-wt50
      python: 3.10
    - env: TOXENV=py310-dj41-wt41
      python: 3.10
+   - env: TOXENV=py310-dj41-wt42
+     python: 3.10
+   - env: TOXENV=py310-dj41-wt50
+     python: 3.10
+   - env: TOXENV=py311-dj41-wt50
+     python: 3.11
+   - env: TOXENV=py311-dj42-wt50
+     python: 3.11
 install:
 - pip install tox coveralls
 - gem install coveralls-lcov
