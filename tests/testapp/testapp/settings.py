@@ -3,8 +3,6 @@ from __future__ import absolute_import, unicode_literals
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-import wagtail
-
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -19,7 +17,7 @@ wagtail_apps = [
     "wagtail.sites",
     "wagtail.users",
     "wagtail.admin",
-    "wagtail" if wagtail.VERSION >= (3, 0) else "wagtail.core",
+    "wagtail",
     "wagtail.documents",
     "wagtail.images",
 ]
