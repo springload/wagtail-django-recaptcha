@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.0 (2023-07-26)
 ------------------
 #. Added Wagtail 5.0 compatibility.
 #. Added Django 4.2 compatibility.
