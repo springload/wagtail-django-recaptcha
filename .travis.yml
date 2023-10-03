@@ -31,11 +31,15 @@ matrix:
      python: 3.9
    - env: TOXENV=py39-dj41-wt50
      python: 3.9
+  - env: TOXENV=py39-dj42-wt50
+     python: 3.9
    - env: TOXENV=py310-dj32-wt41
      python: 3.10
    - env: TOXENV=py310-dj32-wt42
      python: 3.10
    - env: TOXENV=py310-dj32-wt50
+     python: 3.10
+   - env: TOXENV=py310-dj42-wt50
      python: 3.10
    - env: TOXENV=py310-dj41-wt41
      python: 3.10
@@ -43,8 +47,18 @@ matrix:
      python: 3.10
    - env: TOXENV=py310-dj41-wt50
      python: 3.10
-   - env: TOXENV=py311-dj41-wt50
+   - env: TOXENV=py311-dj32-wt41
      python: 3.11
+   - env: TOXENV=py311-dj32-wt42
+     python: 3.11
+   - env: TOXENV=py311-dj32-wt50
+     python: 3.11
+   - env: TOXENV=py310-dj41-wt41
+     python: 3.10
+   - env: TOXENV=py310-dj41-wt42
+     python: 3.10
+   - env: TOXENV=py310-dj41-wt50
+     python: 3.10
    - env: TOXENV=py311-dj42-wt50
      python: 3.11
 install:
