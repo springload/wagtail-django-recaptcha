@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.1 (2023-10-26)
 ------------------
 #. Added Wagtail 5.1 compatibility.
 
