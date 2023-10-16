@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+#. Added Wagtail 5.1 compatibility.
+
 2.0 (2023-07-26)
 ------------------
 #. Added Wagtail 5.0 compatibility.
