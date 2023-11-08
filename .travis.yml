@@ -15,6 +15,8 @@ matrix:
      python: 3.8
    - env: TOXENV=py38-dj32-wt51
      python: 3.8
+   - env: TOXENV=py38-dj32-wt52
+     python: 3.8
    - env: TOXENV=py38-dj41-wt41
      python: 3.8
    - env: TOXENV=py38-dj41-wt42
@@ -22,6 +24,8 @@ matrix:
    - env: TOXENV=py38-dj41-wt50
      python: 3.8
    - env: TOXENV=py38-dj41-wt51
+     python: 3.8
+   - env: TOXENV=py38-dj41-wt52
      python: 3.8
    - env: TOXENV=py39-dj32-wt41
      python: 3.9
@@ -31,6 +35,8 @@ matrix:
      python: 3.9
    - env: TOXENV=py39-dj32-wt51
      python: 3.9
+   - env: TOXENV=py39-dj32-wt52
+     python: 3.9
    - env: TOXENV=py39-dj41-wt41
      python: 3.9
    - env: TOXENV=py39-dj41-wt42
@@ -38,6 +44,8 @@ matrix:
    - env: TOXENV=py39-dj41-wt50
      python: 3.9
    - env: TOXENV=py39-dj41-wt51
+     python: 3.9
+   - env: TOXENV=py39-dj41-wt52
      python: 3.9
    - env: TOXENV=py310-dj32-wt41
      python: 3.10
@@ -47,6 +55,8 @@ matrix:
      python: 3.10
    - env: TOXENV=py310-dj32-wt51
      python: 3.10
+   - env: TOXENV=py310-dj32-wt52
+     python: 3.10
    - env: TOXENV=py310-dj41-wt41
      python: 3.10
    - env: TOXENV=py310-dj41-wt42
@@ -54,6 +64,8 @@ matrix:
    - env: TOXENV=py310-dj41-wt50
      python: 3.10
    - env: TOXENV=py310-dj41-wt51
+     python: 3.10
+   - env: TOXENV=py310-dj41-wt52
      python: 3.10
    - env: TOXENV=py311-dj41-wt41
      python: 3.11
@@ -63,10 +75,16 @@ matrix:
      python: 3.11
    - env: TOXENV=py311-dj41-wt51
      python: 3.11
+   - env: TOXENV=py311-dj41-wt52
+     python: 3.11
    - env: TOXENV=py311-dj42-wt50
      python: 3.11
    - env: TOXENV=py311-dj42-wt51
      python: 3.11
+   - env: TOXENV=py311-dj42-wt52
+     python: 3.11
+   - env: TOXENV=py312-dj42-wt52
+     python: 3.12
 install:
 - pip install tox coveralls
 - gem install coveralls-lcov
