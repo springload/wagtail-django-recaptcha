@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 
-from captcha.fields import ReCaptchaField
+from django_recaptcha.fields import ReCaptchaField
 from django.test import TestCase
 from home.models import TestCaptchaEmailFormField
 
@@ -26,7 +26,7 @@ class WagtailCaptchaFormBuilderTestCase(TestCase):
         self.assertIsInstance(
             generated_fields[WagtailCaptchaFormBuilder.CAPTCHA_FIELD_NAME],
             ReCaptchaField,
-            msg="Captcha field should be an instance of `captcha.fields.ReCaptchaField`.",
+            msg="Captcha field should be an instance of `django_recaptcha.fields.ReCaptchaField`.",
         )
 
     def test_user_defined_fields_are_present(self):
