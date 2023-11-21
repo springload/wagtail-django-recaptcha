@@ -1,7 +1,10 @@
 from __future__ import absolute_import, unicode_literals
 
 import wagtail
-from django_recaptcha.fields import ReCaptchaField
+try:
+    from django_recaptcha.fields import ReCaptchaField  # >= 4.0
+except ImportError:
+    from captcha.fields import ReCaptchaField  # < 4.0
 
 if wagtail.VERSION >= (2, 0):
     from wagtail.contrib.forms.forms import FormBuilder
