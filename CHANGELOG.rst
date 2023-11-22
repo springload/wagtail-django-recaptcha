@@ -3,7 +3,7 @@ Changelog
 
 Unreleased
 ------------------
-...
+#. Pin django-recaptcha to a version <4, as the namespace and interface changes
 
 1.0 (2018-03-07)
 ------------------
