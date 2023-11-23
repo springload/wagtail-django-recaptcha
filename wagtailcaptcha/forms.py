@@ -1,6 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 
-from captcha.fields import ReCaptchaField
+from django_recaptcha.fields import ReCaptchaField
 from wagtail.contrib.forms.forms import FormBuilder
 
 

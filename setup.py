@@ -62,7 +62,7 @@ setup(
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
-    install_requires=["django-recaptcha"],
+    install_requires=["django-recaptcha>=4"],
     extras_require={
         "testing": testing_extras,
         "docs": documentation_extras,

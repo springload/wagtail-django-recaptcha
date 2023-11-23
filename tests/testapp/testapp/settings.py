@@ -128,7 +128,7 @@ SECRET_KEY = "4*5e^@2%(h#$*b4=ze_kcdw46-$0z#rrf3661c5(&+x^oj=4)+"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Silence some errors
-SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
+SILENCED_SYSTEM_CHECKS = ["django_recaptcha.recaptcha_test_key_error"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 try:
