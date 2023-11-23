@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
-from django_recaptcha.fields import ReCaptchaField
 from django.test import TestCase
+from django_recaptcha.fields import ReCaptchaField
 from home.models import TestCaptchaEmailFormField
 
 from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
