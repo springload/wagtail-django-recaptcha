@@ -1,9 +1,6 @@
 from __future__ import absolute_import, unicode_literals
 
-try:
-    from test.support import EnvironmentVarGuard  # Python < 3.10
-except ImportError:
-    from test.support.os_helper import EnvironmentVarGuard  # Python >= 3.10
+from unittest import mock
 
 from django.test import TestCase
 from home.forms import CustomCaptchaFormBuilder
@@ -21,10 +18,17 @@ class CaptchaTestingModeMixin(TestCase):
     """Allow Captcha to pass regardless of the value provided"""
 
     def setUp(self):
-        self.captcha_testing_mode_env = EnvironmentVarGuard()
-        self.captcha_testing_mode_env.set("RECAPTCHA_TESTING", "True")
+        # Use unittest.mock.patch to set the environment variable
+        self.captcha_testing_mode_patch = mock.patch.dict(
+            "os.environ", {"RECAPTCHA_TESTING": "True"}
+        )
+        self.captcha_testing_mode_patch.start()
 
         self.captcha_form_data = {"recaptcha_response_field": "PASSED"}
+
+    def tearDown(self):
+        # Clean up the patch after the test
+        self.captcha_testing_mode_patch.stop()
 
 
 class TestCaptchaEmailFormPageTestCase(CaptchaTestingModeMixin, TestCase):
