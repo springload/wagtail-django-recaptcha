@@ -1,9 +1,10 @@
 Changelog
 =========
 
-Unreleased
+2.1.1 (2024-01-26)
 ------------------
 #. Added tests for Wagtail 5.2
+#. Update version to replace incorrectly published v2.1
 
 2.1 (2023-10-26)
 ------------------
