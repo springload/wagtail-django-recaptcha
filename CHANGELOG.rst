@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+- Drop testing for Wagtail version before 4.1
+- Add testing for Wagtail versions 5.2 and 6.0
+
 2.1.1 (2024-01-26)
 ------------------
 #. Added tests for Wagtail 5.2
