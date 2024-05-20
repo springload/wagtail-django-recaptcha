@@ -21,7 +21,7 @@ testing_extras = [
     "flake8>=5.0.4,<5.1",
     "isort>=5.10.1",
     # For test site
-    "wagtail>=4.1",
+    "wagtail>=5.2",
 ]
 
 # Documentation dependencies
@@ -52,11 +52,9 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Framework :: Django",
-        "Framework :: Django :: 3.2",
-        "Framework :: Django :: 4.1",
         "Framework :: Django :: 4.2",
+        "Framework :: Django :: 5.0",
         "Framework :: Wagtail",
-        "Framework :: Wagtail :: 4",
         "Framework :: Wagtail :: 5",
         "Framework :: Wagtail :: 6",
         "Topic :: Internet :: WWW/HTTP",

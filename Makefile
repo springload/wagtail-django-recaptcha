@@ -26,7 +26,13 @@ test-ci: ## Continuous integration test suite.
 	tox
 
 update-test-fixture: ## Update test fixture from the db.
-	python ./tests/testapp/manage.py dumpdata --indent=4 -e contenttypes -e auth.permission -e auth.group -e sessions -e wagtailcore.site -e wagtailcore.pagerevision -e wagtailcore.grouppagepermission -e wagtailimages.rendition -e wagtailcore.collection -e wagtailcore.groupcollectionpermission > tests/testapp/fixtures/test_data.json
+	python ./tests/testapp/manage.py dumpdata --indent=4 \
+	-e contenttypes -e auth.permission -e auth.group -e sessions \
+	-e wagtailcore.site -e wagtailcore.revision -e wagtailcore.grouppagepermission \
+	-e wagtailimages.rendition -e wagtailcore.collection -e wagtailcore.groupcollectionpermission \
+	-e wagtailcore.locale \
+	-e wagtailcore.workflowpage -e wagtailcore.workflowtask -e wagtailcore.task -e wagtailcore.workflow -e wagtailcore.groupapprovaltask \
+	> tests/testapp/home/fixtures/test_data.json
 
 clean-pyc: ## Remove Python file artifacts.
 	find . -name '*.pyc' -exec rm -f {} +

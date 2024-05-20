@@ -4,8 +4,9 @@ Changelog
 Unreleased
 ----------
 
-- Drop testing for Wagtail version before 4.1
-- Add testing for Wagtail versions 5.2 and 6.0
+- Drop support for Wagtail < 5.2
+- Add testing for Wagtail versions 5.2, 6.0, and 6.1
+- Drop support for Django < 4.2
 
 2.1.1 (2024-01-26)
 ------------------
