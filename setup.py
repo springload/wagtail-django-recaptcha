@@ -15,10 +15,10 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 # Testing dependencies
 testing_extras = [
     # Required for running the tests
-    "tox>=3.26.0,<3.27",
+    "tox>=4.18.1,<4.19",
     # For coverage and PEP8 linting
     "coverage>=6.5.0,<6.6",
-    "flake8>=5.0.4,<5.1",
+    "flake8>=7.0.0,<7.1",
     "isort>=5.10.1",
     # For test site
     "wagtail>=4.1",
