@@ -13,8 +13,8 @@ Check out [Awesome Wagtail](https://github.com/springload/awesome-wagtail) for m
 
 ## Compatibility
 
-- Django 5.2, 6.0
-- Wagtail 7.0 LTS, 7.3
+- Django 5.2, 6.0, 6.1
+- Wagtail 7.4 LTS, 8.0
 - Python 3.10, 3.11, 3.12, 3.13, 3.14
 
 ## Installation
@@ -43,27 +43,35 @@ from wagtailcaptcha.models import WagtailCaptchaEmailForm
 
 
 class SubmitFormField(AbstractFormField):
-    page = ParentalKey('SubmitFormPage', related_name='form_fields')
+    page = ParentalKey("SubmitFormPage", related_name="form_fields")
 
 
 class SubmitFormPage(WagtailCaptchaEmailForm):
-    body = RichTextField(blank=True, help_text='Edit the content you want to see before the form.')
-    thank_you_text = RichTextField(blank=True, help_text='Set the message users will see after submitting the form.')
+    body = RichTextField(
+        blank=True, help_text="Edit the content you want to see before the form."
+    )
+    thank_you_text = RichTextField(
+        blank=True,
+        help_text="Set the message users will see after submitting the form.",
+    )
 
     class Meta:
         verbose_name = "Form submission page"
 
 
 SubmitFormPage.content_panels = [
-    FieldPanel('title', classname="full title"),
-    FieldPanel('body', classname="full"),
-    FieldPanel('thank_you_text', classname="full"),
-    InlinePanel('form_fields', label="Form fields"),
-    MultiFieldPanel([
-        FieldPanel('to_address'),
-        FieldPanel('from_address'),
-        FieldPanel('subject'),
-    ], "Email notification")
+    FieldPanel("title", classname="full title"),
+    FieldPanel("body", classname="full"),
+    FieldPanel("thank_you_text", classname="full"),
+    InlinePanel("form_fields", label="Form fields"),
+    MultiFieldPanel(
+        [
+            FieldPanel("to_address"),
+            FieldPanel("from_address"),
+            FieldPanel("subject"),
+        ],
+        "Email notification",
+    ),
 ]
 ```
 
